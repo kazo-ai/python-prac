@@ -30,7 +30,7 @@
 
 # print("\nFiles saved:")
 # print("- output/sales_data.json")
-# print("- output/sales_data.xlsx") 
+# print("- output/sales_data.xlsx")
 # print("- output/sales_with_totals.csv")
 
 
@@ -38,24 +38,24 @@ import pandas as pd
 from helpers import calculate_total, format_currency
 
 # Read data
-df = pd.read_csv('data/sales.csv')
+df = pd.read_csv("data/sales.csv")
 
 # Calculate total for each row
 totals = []
 for index, row in df.iterrows():
-    total = calculate_total(row['quantity'], row['price'])
-    totals.append(total) # storing the totals value in total array to put it in data
+    total = calculate_total(row["quantity"], row["price"])
+    totals.append(total)  # storing the totals value in total array to put it in data
 
-# Add totals column and data  to our data 
-df['total'] = totals
+# Add totals column and data  to our data
+df["total"] = totals
 
 # Display with formatted totals
 print("Sales Data:")
 for index, row in df.iterrows():
-    formatted_total = format_currency(row['total'])
+    formatted_total = format_currency(row["total"])
     print(f"{row['product']}: {formatted_total}")
 
 # Show grand total
-grand_total = df['total'].sum()
+grand_total = df["total"].sum()
 formatted_grand_total = format_currency(grand_total)
 print(f"\nGrand Total: {formatted_grand_total}")

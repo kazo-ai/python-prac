@@ -17,7 +17,7 @@ class Dog(Animal):
 # Create a dog - using positional argument
 my_dog = Dog("Buddy")
 # Or with named argument
-my_dog2 = Dog(name="Maxx")
+my_dog2 = Dog(name="Maxxx")
 
 # Dog can do animal things (inherited)
 print(my_dog.eat())    # Buddy is eating
